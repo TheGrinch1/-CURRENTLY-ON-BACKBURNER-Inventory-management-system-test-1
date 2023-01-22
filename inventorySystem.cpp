@@ -1,14 +1,5 @@
 #include <iostream>
-#include <iomanip>
-#include <vector>
-#include <stdexcept>
-
-
-
-void displayMenu();
-void addData();
-void deleteData();
-void printData();
+#include <string>
 
 
 int main(){
@@ -22,33 +13,39 @@ int main(){
     std::cout << "***********************************\n";
     std::cin >> choice;
 
-    if(){
+    if(choice == 1){
 
 
 
 
 
     }
-    else if(){
+    else if(choice == 2){
 
+        std::string partnumber[10];
+        int size = sizeof(partnumber)/sizeof(partnumber[0]);
+
+            for(int i = 0; i < size; i++){
+                std::cout << "Please enter part number you would like to add to column " << i + 1  << ":\n ";
+                std::getline(std::cin, partnumber[i]);
+
+
+            }
+        std::cout << "Part numbers listed are:\n";
+
+        for(std::string partnumber : partnumber){
+            std::cout << partnumber << "\n";
+        }
 
 
     }
-    else if (){
+    else if (choice == 3){
 
 
     }
-    else(){
+    else{
         std::cout << "Incorrect selection , please try again\n";
     }
-
-
-
-
-
-
-
-
 
     return 0;
 }
