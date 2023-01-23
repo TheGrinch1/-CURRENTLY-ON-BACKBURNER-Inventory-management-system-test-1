@@ -27,9 +27,7 @@ int main(){
 
             for(int i = 0; i < size; i++){
                 std::cout << "Please enter part number you would like to add to column " << i + 1  << ":\n ";
-                std::getline(std::cin, partnumber[i]);
-
-
+                std::getline(std::cin >> std::ws, partnumber[i]);
             }
         std::cout << "Part numbers listed are:\n";
 
