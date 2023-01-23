@@ -24,15 +24,21 @@ int main(){
 
         std::string partnumber[10];
         int size = sizeof(partnumber)/sizeof(partnumber[0]);
-
+        std::string temp;
             for(int i = 0; i < size; i++){
-                std::cout << "Please enter part number you would like to add to column " << i + 1  << ":\n ";
-                std::getline(std::cin >> std::ws, partnumber[i]);
+                std::cout << "Please enter part number you would like to add to column " << i + 1  << ". \nIf you would like to exit early please enter q\n ";
+                std::getline(std::cin >> std::ws, temp);
+                if(temp == "q"){
+                    break;
+                }
+                else{
+                    partnumber[i] = temp;
+                }
             }
         std::cout << "Part numbers listed are:\n";
 
-        for(std::string partnumber : partnumber){
-            std::cout << partnumber << "\n";
+        for(int i = 0; !partnumber[i].empty(); i++){
+            std::cout << partnumber[i] << "\n";
         }
 
 
@@ -43,7 +49,8 @@ int main(){
     }
     else{
         std::cout << "Incorrect selection , please try again\n";
+        main();
     }
 
-    return 0;
+    return 0 ;
 }
